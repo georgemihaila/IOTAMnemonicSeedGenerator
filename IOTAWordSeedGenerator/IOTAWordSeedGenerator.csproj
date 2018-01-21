@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>1_ey4ghdd_5f_zozj0u2l6tg_hSx_icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -100,6 +103,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="cropped-IOTA_Wallpaper_02_2560x1440_preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="1_ey4ghdd_5f_zozj0u2l6tg_hSx_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
