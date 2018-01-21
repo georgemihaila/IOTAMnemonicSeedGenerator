@@ -71,6 +71,8 @@ namespace IOTAWordSeedGenerator
                 SeedWords_Canvas.Children.Clear();
                 TextBlock[] seedWords_TextBlock = new TextBlock[12];
                 string[] seedWords = new string[12];
+                int x = 0;
+                int y = 0;
                 for (int i = 0; i < seedWords_TextBlock.Length; i++)
                 {
                     seedWords_TextBlock[i] = new TextBlock();
@@ -87,8 +89,13 @@ namespace IOTAWordSeedGenerator
                         (a as TextBlock).Foreground = new SolidColorBrush(Colors.White);
                     };
                     SeedWords_Canvas.Children.Add(seedWords_TextBlock[i]);
-                    Canvas.SetLeft(seedWords_TextBlock[i], 5 + (i % 4) * (SeedWords_Canvas.ActualWidth / 4));
-                    Canvas.SetTop(seedWords_TextBlock[i], 15 + (i % 3) * 30);
+                    if (x == 4)
+                    {
+                        x = 0;
+                        y++;
+                    }
+                    Canvas.SetLeft(seedWords_TextBlock[i], 5 + (x++) * (SeedWords_Canvas.ActualWidth / 4));
+                    Canvas.SetTop(seedWords_TextBlock[i], 15 + (y) * 30);
                 }
                 TextBlock seedTextBlock = new TextBlock();
                 seedTextBlock.FontWeight = FontWeights.Bold;
@@ -128,7 +135,7 @@ namespace IOTAWordSeedGenerator
             }
             else
             {
-                string seed = Recovery_TextBox.Text.Replace(" ", string.Empty);
+                string seed = Recovery_TextBox.Text.Replace(" ", string.Empty).ToLower();
                 Recovery_TextBlock.Text = "Your IOTA seed:\n" + GenerateSeed(seed);
             }
         }
@@ -175,7 +182,7 @@ namespace IOTAWordSeedGenerator
 
         private async void Copied()
         {
-            Loading_TextBlock.Text = "Seed copied to clipbard!";
+            Loading_TextBlock.Text = "Seed copied to clipboard!";
             await Task.Delay(2000);
             Loading_TextBlock.Text = "Your 12 word seed:";
         }
