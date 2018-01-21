@@ -6,11 +6,17 @@
         xmlns:local="clr-namespace:IOTAWordSeedGenerator"
         mc:Ignorable="d"
         Title="IOTA mnemonic seed generator" Height="350" ResizeMode="NoResize" Width="570">
-    <Grid>
+    <Canvas>
         <Image x:Name="BackgroundImage" HorizontalAlignment="Left" Height="321" VerticalAlignment="Top" Width="570" Source="cropped-IOTA_Wallpaper_02_2560x1440_preview.png" Stretch="UniformToFill"/>
         <Button x:Name="GenerateButton" Content="Generate 12 word mnemonic phrase" HorizontalAlignment="Left" BorderThickness="0" Margin="166,10,0,0"  VerticalAlignment="Top" Width="220" Height="39" BorderBrush="White" Background="#CCFFFFFF" FontWeight="Bold" Click="GenerateButton_Click"/>
         <TextBlock x:Name="Loading_TextBlock" HorizontalAlignment="Left" Margin="0,54,0,0" TextWrapping="Wrap" Text="Loading..." VerticalAlignment="Top" FontWeight="Bold" Foreground="White" Height="21" Width="564" TextAlignment="Center"/>
         <Canvas x:Name="SeedWords_Canvas" HorizontalAlignment="Left" Height="170" Margin="0,80,0,0" VerticalAlignment="Top" Width="564" Background="#7F0E0D29"/>
+        <Button x:Name="RecoverButton" Content="Recover seed" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" BorderThickness="0" Width="90" Background="#00000000" FontWeight="Bold" Foreground="White" Click="RecoverButton_Click"/>
+        <Canvas x:Name="Recover_Canvas" HorizontalAlignment="Left" Height="188" VerticalAlignment="Top" Width="564" Background="White" Canvas.Top="80">
+            <TextBox x:Name="Recovery_TextBox" Height="110" Canvas.Left="10" TextWrapping="Wrap" AcceptsReturn="True" BorderThickness="2" Canvas.Top="10" Width="539" BorderBrush="Black"/>
+            <TextBlock x:Name="Recovery_TextBlock" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="125" FontWeight="Bold" Width="454"/>
+            <Button x:Name="RecoveryClose_Button" Content="Close" Click="RecoveryClose_Button_Click" BorderThickness="0" Canvas.Left="474" Canvas.Top="127" Width="75" Background="White" FontWeight="Bold"/>
+        </Canvas>
 
-    </Grid>
+    </Canvas>
 </Window>
